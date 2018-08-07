@@ -15,6 +15,10 @@ def params():
 	param2 = request.args.get('param2','no tiene este parametro')
 	param3 = request.args.get('param3','no tiene este parametro')
 	return 'El parametro es Nombre: {} Apellido: {} Edad: {}'.format(param,param2,param3) #Regresa un string	
+@app.route('/parametros/')
+@app.route('/parametros/<name>/<int:num>') #wrap o un decorador
+def parametros(name ='Este es un valor por defecto',num='nada'):
+	return 'El parametro es Nombre: {} Edad: {} '.format(name,num) #Regresa un string	
 
 if __name__ == '__main__':
 		app.run(debug = True, port = 8000) #se encarga de ejecutar el servidor 5000
