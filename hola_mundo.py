@@ -30,7 +30,15 @@ def template():
 @app.route('/templateParametros/<name>/<int:age>')
 def templateParametros(name = 'Sin nombre', age='10'):
 	lista =["Lunes","Martes","Miercoles","Jueves","Viernes"]
-	return render_template('index_parametros.html',nombre=name,edad=age,lista=lista)	
+	return render_template('index_parametros.html',nombre=name,edad=age,lista=lista)
+
+@app.route('/template_extendida/')
+def template_extendida():
+	return render_template('index_extendido.html')
+
+@app.route('/contenido_externo/')
+def contenido_externo():
+	return render_template('contenido_externo.html')	
 
 if __name__ == '__main__':
 		app.run(debug = True, port = 8000) #se encarga de ejecutar el servidor 5000

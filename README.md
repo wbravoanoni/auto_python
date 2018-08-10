@@ -84,3 +84,11 @@ app.run(debug = True, port = 8000) cambios en tiempo real
 if __name__ == '__main__':
 app.run(debug = True, port = 8000) cambios en tiempo real solo para el main
 ~~~~~~~~
+
+
+## LLamar contenido en el index
+~~~~~~~~
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+<img src="{{ url_for('static',filename='img/loro.jpg') }}" alt="">
+<script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+~~~~~~~~
