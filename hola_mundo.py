@@ -27,5 +27,10 @@ def parametros(name ='Este es un valor por defecto',num='nada'):
 def template():
 	return render_template('index.html')
 
+@app.route('/templateParametros/<name>/<int:age>')
+def templateParametros(name = 'Sin nombre', age='10'):
+	lista =["Lunes","Martes","Miercoles","Jueves","Viernes"]
+	return render_template('index_parametros.html',nombre=name,edad=age,lista=lista)	
+
 if __name__ == '__main__':
 		app.run(debug = True, port = 8000) #se encarga de ejecutar el servidor 5000
